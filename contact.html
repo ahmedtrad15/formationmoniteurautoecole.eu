@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDUCÀSER - Contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+/* Hero Section */
+        .contact-hero {
+            background: linear-gradient(120deg, rgba(26, 58, 108, 0.9) 0%, rgba(77, 138, 240, 0.85) 100%), url('https://images.unsplash.com/photo-1586769852836-bc069f19e1b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 140px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+     
+
+        .contact-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .contact-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 25px;
+            line-height: 1.3;
+        }
+
+        .contact-hero p {
+            font-size: 1.3rem;
+            margin: 0 auto 30px;
+            max-width: 700px;
+            opacity: 0.95;
+        }
+
+        /* Section Styles */
+        .contact-section {
+            padding: var(--section-padding);
+        }
+
+        .contact-section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .contact-section-title h2 {
+            font-size: 2.4rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .contact-section-title p {
+            color: var(--gray);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-section-title::after {
+            content: '';
+            width: 80px;
+            height: 5px;
+            background: var(--secondary);
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 3px;
+        }
+
+        /* Forms Container */
+        .forms-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .contact-form-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+            transform: translateY(0);
+        }
+
+        .contact-form-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-form-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--accent);
+        }
+
+        .form-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .form-header i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            background: rgba(77, 138, 240, 0.1);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .form-header h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+
+        .form-header p {
+            color: var(--gray);
+            margin-top: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--dark);
+            gap: 8px;
+        }
+
+        .form-group label span.required {
+            color: var(--secondary);
+            font-size: 0.8rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid var(--light-gray);
+            border-radius: var(--border-radius);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(77, 138, 240, 0.2);
+            outline: none;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        
+        .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+      .checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.checkbox-item {
+  display: flex;
+flex-direction: column;
+  background-color: #f8f9fa;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  position: relative;
+  border: 1px solid #e9ecef;
+  box-sizing: border-box;
+}
+
+
+.checkbox-item:hover {
+  background-color: #f1f3f5;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  border-color: #ced4da;
+}
+
+
+
+.checkbox-label {
+  font-weight: 700;
+  font-size: 18px;
+  color: #212529;
+  margin-bottom: 8px;
+}
+
+
+
+        
+        .radio-item {
+            display: flex;
+            align-items: center;
+            background: var(--light);
+            padding: 12px 20px;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .radio-item {
+            position: relative;
+            padding-left: 45px;
+        }
+
+        .custom-radio {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--gray);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .custom-radio::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .radio-item input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .radio-item input[type="radio"]:checked ~ .custom-radio {
+            border-color: var(--accent);
+        }
+
+        .radio-item input[type="radio"]:checked ~ .custom-radio::after {
+            opacity: 1;
+        }
+
+        .radio-item input[type="radio"]:checked ~ .radio-label {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .radio-label {
+            margin-left: 5px;
+        }
+
+        .form-btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            font-size: 1.05rem;
+            text-align: center;
+           width: 100%;
+     
+
+        }
+
+        .form-btn:hover {
+            background-color: #ff5252;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        /* Contact Info */
+        .contact-info-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #2a5298 100%);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-info-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-info-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .contact-info-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .contact-info-card i {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .contact-info-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-info-card p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+
+        .contact-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .contact-cta-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            :root {
+                --section-padding: 80px 0;
+            }
+            
+            .contact-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --section-padding: 70px 0;
+            }
+            
+            .contact-section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .contact-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .contact-hero p {
+                font-size: 1.15rem;
+            }
+            
+            .contact-form-card {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .contact-hero h1 {
+                font-size: 1.9rem;
+            }
+            
+            .contact-section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .form-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .form-header i {
+                margin-bottom: 15px;
+            }
+        }
+</style>
+<body>
+    
+<header id="header"></header>
+
+
+
+
+   <section class="contact-hero">
+        <div class="container contact-hero-content">
+            <h1>Contactez EDUCÀSER</h1>
+            <p>Une question ? Besoin d'informations ? Notre équipe est à votre disposition</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-section-title">
+                <h2>Nous vous répondons rapidement</h2>
+                <p>Choisissez le formulaire qui correspond à votre besoin</p>
+            </div>
+            
+            <div class="forms-container">
+                <!-- Callback Form -->
+                <div class="contact-form-card">
+                    <div class="form-header">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h3>Formulaire de demande de rappel</h3>
+                            <p>Remplissez ce formulaire et un conseiller EDUCÀSER vous rappelle sous 24 heures</p>
+                        </div>
+                    </div>
+
+                    <form id="callback-form" action="https://formsubmit.co/ahmed.trad15@gmail.com" method="POST">
+                    
+                    <div class="form-group">
+                        <label>🔹 Vos informations</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Nom et prénom <span class="required">(obligatoire)</span></label>
+                        <input type="text" name="non&prenom" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Téléphone <span class="required">(obligatoire)</span></label>
+                        <input type="tel" name="tel" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Adresse email (optionnel)</label>
+                        <input type="email" name="email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Ville ou département</label>
+                        <input type="text" name="ville">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Formation souhaitée <span class="required">(obligatoire)</span></label>
+                        <select name="Formation souhaitée" required>
+                            <option value="">Sélectionnez une formation</option>
+                            <option value="moniteur">Moniteur Auto-École (TP ECSR)</option>
+                            <option value="secretaire">Secrétaire Auto-École</option>
+                            <option value="autre">Autre / Je ne sais pas encore</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Plage horaire préférée pour le rappel</label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="Plage horaire préférée pour le rappel">
+                                <span class="custom-radio"></span>
+                                <span class="radio-label">Matin (9h - 12h)</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="Plage horaire préférée pour le rappel">
+                                <span class="custom-radio"></span>
+                                <span class="radio-label">Après-midi (12h - 17h)</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="Plage horaire préférée pour le rappel">
+                                <span class="custom-radio"></span>
+                                <span class="radio-label">Soir (17h - 19h)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                   
+                    
+                    <div class="form-group">
+                        <label>🚀 Ce que vous souhaitez discuter :</label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="Ce que vous souhaitez discuter" required> 
+                                <span class="custom-radio"></span>
+                                <span class="radio-label">Financement de la formation</span>
+                            </label>
+
+                            <label class="radio-item">
+                                <input type="radio" name="Ce que vous souhaitez discuter" required> 
+                                <span class="custom-radio"></span>
+                                <span class="radio-label">Dates de rentrée et disponibilités</span>
+                            </label>
+
+                            <label class="radio-item">
+                                <input type="radio" name="Ce que vous souhaitez discuter" required> 
+                                <span class="custom-radio"></span>
+                                <span class="radio-label">Pré-requis et accès</span>
+                            </label>
+
+                            <label class="radio-item">
+                                <input type="radio" name="Ce que vous souhaitez discuter" required> 
+                                <span class="custom-radio"></span>
+                                <span class="radio-label">Débouchés professionnels</span>
+                            </label>
+
+
+
+                          
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="form-btn">✅ Être rappelé(e) maintenant</button>
+
+                     </form>
+                </div>
+                
+                <!-- Registration Form -->
+                <div class="contact-form-card">
+                    <div class="form-header">
+                        <i class="fas fa-file-signature"></i>
+                        <div>
+                            <h3>Formulaire d'inscription à une formation</h3>
+                            <p>Inscrivez-vous dès maintenant à l'une de nos formations professionnelles</p>
+                        </div>
+                    </div>
+
+
+                    <form id="registration-form" action="https://formsubmit.co/ahmed.trad15@gmail.com" method="POST">
+                    
+                    <div class="form-group">
+                        <label>🔹 Informations personnelles</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Nom et prénom <span class="required">(obligatoire)</span></label>
+                        <input type="text" name="nom et prénom" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Date de naissance <span class="required">(obligatoire)</span></label>
+                        <input type="date" name="Date de naissance" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Adresse postale complète <span class="required">(obligatoire)</span></label>
+                        <input type="text" name="Adresse postale complète" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Téléphone <span class="required">(obligatoire)</span></label>
+                        <input type="tel" name="Téléphone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Email <span class="required">(obligatoire)</span></label>
+                        <input type="email" name="Email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>🎓 Formation souhaitée</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Choix de la formation <span class="required">(obligatoire)</span></label>
+                        <select name="Choix de la formation" required>
+                            <option value="">Sélectionnez une formation</option>
+                            <option value="moniteur">Moniteur Auto-École (TP ECSR)</option>
+                            <option value="secretaire">Secrétaire Auto-École</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Centre de formation <span class="required">(obligatoire)</span></label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="Centre de formation">
+                                <span class="custom-radio"></span>
+                                <span class="radio-label">Palaiseau</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="Centre de formation">
+                                <span class="custom-radio"></span>
+                                <span class="radio-label">Noisy-le-Sec</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="Centre de formation">
+                                <span class="custom-radio"></span>
+                                <span class="radio-label">Meaux</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Mode de formation préféré</label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="Mode de formation préféré">
+                                <span class="custom-radio"></span>
+                                <span class="radio-label">Présentiel</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="Mode de formation préféré">
+                                <span class="custom-radio"></span>
+                                <span class="radio-label">Distanciel</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="Mode de formation préféré">
+                                <span class="custom-radio"></span>
+                                <span class="radio-label">Alternance</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="Mode de formation préféré">
+                                <span class="custom-radio"></span>
+                                <span class="radio-label">Je ne sais pas encore</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>💬 Informations complémentaires</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Êtes-vous actuellement en emploi ? <span class="required">(obligatoire)</span></label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="tes-vous actuellement en emploi ?">
+                                <span class="custom-radio"></span>
+                                <span class="radio-label">Oui</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="tes-vous actuellement en emploi ?">
+                                <span class="custom-radio"></span>
+                                <span class="radio-label">Non</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Souhaitez-vous un financement ?</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="CPF"> CPF
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="France Travail"> France Travail (ex Pôle emploi)
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="OPCO"> OPCO
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="Financement personnel"> Financement personnel
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="Je ne sais pas encore"> Je ne sais pas encore
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Message ou précision supplémentaire</label>
+                        <textarea name="Message"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="form-btn">✅ Je m’inscris maintenant</button>
+                </div>
+
+                </form>
+                
+                <!-- Quote Form -->
+                <div class="contact-form-card" id="quote-form">
+                    <div class="form-header">
+                        <i class="fas fa-file-invoice"></i>
+                        <div>
+                            <h3>Formulaire de demande de devis personnalisé</h3>
+                            <p>Remplissez ce formulaire pour recevoir un devis adapté à votre profil</p>
+                        </div>
+                    </div>
+
+                    <form id="devis-form" action="https://formsubmit.co/ahmed.trad15@gmail.com" method="POST"> 
+                    
+                    <div class="form-group">
+                        <label>🔹 Vos coordonnées</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Nom et prénom <span class="required">(obligatoire)</span></label>
+                        <input type="text" name="Nom et prénom" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Adresse email <span class="required">(obligatoire)</span></label>
+                        <input type="email" name="Email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Téléphone <span class="required">(obligatoire)</span></label>
+                        <input type="tel" name="Téléphone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Ville ou département</label>
+                        <input type="text" name="Ville ou département">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>🎓 Votre projet de formation</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Formation souhaitée <span class="required">(obligatoire)</span></label>
+                        <select required name="Formation souhaitée">
+                            <option value="">Sélectionnez une formation</option>
+                            <option value="moniteur">Moniteur Auto-École (TP ECSR)</option>
+                            <option value="secretaire">Secrétaire Auto-École</option>
+                            <option value="autre">Autre (précisez ci-dessous)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Centre souhaité</label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="Centre souhaité">
+                                <span class="custom-radio"></span>
+                                <span class="radio-label">Palaiseau</span>
+                            </label>
+                             <label class="radio-item">
+                                <input type="radio" name="Centre souhaité">
+                                <span class="custom-radio"></span>
+                                <span class="radio-label">Noisy-le-Sec</span>
+                            </label>
+                             <label class="radio-item">
+                                <input type="radio" name="Centre souhaité">
+                                <span class="custom-radio"></span>
+                                <span class="radio-label">Meaux</span>
+                            </label>
+                             <label class="radio-item">
+                                <input type="radio" name="Centre souhaité">
+                                <span class="custom-radio"></span>
+                                <span class="radio-label"> À distance / en ligne</span>
+                            </label>
+                         
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Mode de formation préféré</label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="Mode de formation préféré">
+                                <span class="custom-radio"></span>
+                                <span class="radio-label">Présentiel</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="Mode de formation préféré">
+                                <span class="custom-radio"></span>
+                                <span class="radio-label">Distanciel</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="Mode de formation préféré">
+                                <span class="custom-radio"></span>
+                                <span class="radio-label">Alternance</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="Mode de formation préféré">
+                                <span class="custom-radio"></span>
+                                <span class="radio-label">Je ne sais pas encore</span>
+                            </label>
+
+
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>💳 Votre situation de financement</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Quel dispositif souhaitez-vous utiliser ?</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="Quel dispositif souhaitez-vous utiliser ?"> Compte Personnel de Formation (CPF)
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox"
+                                name="Quel dispositif souhaitez-vous utiliser ?"> France Travail (ex Pôle emploi)
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="Quel dispositif souhaitez-vous utiliser ?"> OPCO (Organisme financeur employeur)
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="Quel dispositif souhaitez-vous utiliser ?"> Financement personnel
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="Quel dispositif souhaitez-vous utiliser ?"> Autre / Je ne sais pas encore
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Souhaitez-vous un accompagnement administratif pour le financement ?</label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="Assistance administratif pour le financement">
+                                <span class="custom-radio"></span>
+                                <span class="radio-label">Oui</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="Assistance adminsitratif pour le financement">
+                                <span class="custom-radio"></span>
+                                <span class="radio-label">Non</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>💬 Message / Précision supplémentaire</label>
+                        <textarea name="Message"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="form-btn">✅ Recevoir mon devis personnalisé</button>
+                </div>
+            </div>
+        </div>
+
+        </form>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="contact-info-section">
+        <div class="container contact-info-container">
+            <div class="contact-info-card">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+                <p>contact@educaser.fr</p>
+                <a href="mailto:contact@educaser.fr" class="contact-cta-btn">
+                    <i class="fas fa-paper-plane"></i> Envoyer un email
+                </a>
+            </div>
+            
+            <div class="contact-info-card">
+                <i class="fas fa-phone"></i>
+                <h3>Téléphone</h3>
+                <p>01 69 09 27 27</p>
+                <a href="tel:0169092727" class="contact-cta-btn">
+                    <i class="fas fa-phone-alt"></i> Appeler maintenant
+                </a>
+            </div>
+            
+            <div class="contact-info-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Nos centres</h3>
+                <p>Palaiseau, Noisy-le-Sec, Meaux</p>
+                <a href="#" class="contact-cta-btn">
+                    <i class="fas fa-directions"></i> Voir sur la carte
+                </a>
+            </div>
+            
+            <div class="contact-info-card">
+                <i class="fas fa-question-circle"></i>
+                <h3>Assistance</h3>
+                <p>Du lundi au vendredi, 9h-18h</p>
+                <a href="#" class="contact-cta-btn">
+                    <i class="fas fa-comments"></i> Poser une question
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+<footer id="footer"></footer>
+
+ 
+
+<script>
+
+// Enhanced radio button interaction
+        document.querySelectorAll('.radio-item').forEach(item => {
+            const radio = item.querySelector('input[type="radio"]');
+            const customRadio = item.querySelector('.custom-radio');
+            
+            // Add click event to the entire radio item
+            item.addEventListener('click', (e) => {
+                // Only proceed if the click wasn't directly on the radio input
+                if (e.target !== radio) {
+                    radio.checked = true;
+                    updateRadioState();
+                }
+            });
+            
+            // Add change event to the radio input itself
+            radio.addEventListener('change', updateRadioState);
+            
+            function updateRadioState() {
+                // Reset all radios in the same group
+                const groupName = radio.getAttribute('name');
+                if (groupName) {
+                    document.querySelectorAll(`input[name="${groupName}"]`).forEach(r => {
+                        const parent = r.closest('.radio-item');
+                        if (parent) {
+                            parent.querySelector('.custom-radio').style.borderColor = 'var(--gray)';
+                            parent.querySelector('.custom-radio::after').style.opacity = '0';
+                            parent.querySelector('.radio-label').style.fontWeight = 'normal';
+                            parent.querySelector('.radio-label').style.color = '';
+                        }
+                    });
+                }
+                
+                // Update current radio
+                if (radio.checked) {
+                    customRadio.style.borderColor = 'var(--accent)';
+                    customRadio.nextElementSibling.style.fontWeight = '600';
+                    customRadio.nextElementSibling.style.color = 'var(--primary)';
+                    customRadio.style.setProperty('--after-opacity', '1');
+                }
+            }
+        });
+        
+        // Initialize radio button states
+        document.querySelectorAll('input[type="radio"]:checked').forEach(radio => {
+            const customRadio = radio.nextElementSibling;
+            if (customRadio && customRadio.classList.contains('custom-radio')) {
+                customRadio.style.borderColor = 'var(--accent)';
+                customRadio.nextElementSibling.style.fontWeight = '600';
+                customRadio.nextElementSibling.style.color = 'var(--primary)';
+            }
+        });
+        
+        // Add subtle animations to form cards
+        const formCards = document.querySelectorAll('.contact-form-card');
+        formCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px)';
+                card.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.15)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+                card.style.boxShadow = '';
+            });
+        });
+    
+</script>
+
+
+
+
+
+<script src="educaser.js"></script>
+
+</body>
+
+
+</head>
+</html>
+

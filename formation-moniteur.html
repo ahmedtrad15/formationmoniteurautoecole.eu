@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDUCÀSER - Formation Moniteur Auto-École</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .training-hero {
+            background: linear-gradient(120deg, rgba(26, 58, 108, 0.9) 0%, rgba(77, 138, 240, 0.85) 100%), url('https://images.unsplash.com/photo-1569516449775-ae0c1d8f9b8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 140px 0 100px;
+            text-align: center;
+            position: relative;
+        }
+
+
+
+        .training-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .training-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            line-height: 1.3;
+        }
+
+        .training-hero p {
+            font-size: 1.25rem;
+            margin: 0 auto 30px;
+            max-width: 700px;
+            opacity: 0.95;
+        }
+
+        /* Section Styles */
+        .training-section {
+            padding: var(--section-padding);
+        }
+
+        .training-section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .training-section-title h2 {
+            font-size: 2.4rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .training-section-title p {
+            color: var(--gray);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .training-section-title::after {
+            content: '';
+            width: 80px;
+            height: 5px;
+            background: var(--secondary);
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 3px;
+        }
+
+        /* Objectives Section */
+        .training-objectives {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 50px;
+            margin-top: 40px;
+        }
+
+        .training-objectives-content {
+            padding: 30px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-left: 4px solid var(--accent);
+        }
+
+        .training-objectives-content:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .training-objectives-content h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .training-objectives-content h3 i {
+            color: var(--secondary);
+            font-size: 1.8rem;
+        }
+
+        .training-objectives-content ul {
+            margin: 20px 0;
+        }
+
+        .training-objectives-content li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            list-style-type: none;
+        }
+
+        .training-objectives-content li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        /* Pricing Section */
+        .training-pricing {
+            background-color: var(--light);
+        }
+
+        .training-pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .training-pricing-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            border-top: 4px solid var(--accent);
+        }
+
+        .training-pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .training-pricing-header {
+            background: var(--primary);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .training-pricing-header h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+
+        .training-pricing-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .training-pricing-content ul {
+            list-style-type: none;
+        }
+
+        .training-pricing-features {
+            margin: 20px 0;
+            flex-grow: 1;
+        }
+
+        .training-pricing-features li {
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .training-pricing-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .training-cta {
+            margin-top: auto;
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        /* Why Choose Section */
+        .training-why {
+            background: linear-gradient(135deg, var(--primary) 0%, #2a5298 100%);
+            color: white;
+        }
+
+        .training-why-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .training-why-point {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .training-why-point:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .training-why-point i {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .training-why-point h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* Financing Section */
+        .training-financing {
+            background-color: var(--light);
+        }
+
+        .training-financing-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 50px;
+            align-items: center;
+        }
+
+        .training-financing-text {
+            padding-right: 20px;
+        }
+
+        .training-financing-text ul {
+            margin: 20px 0;
+            list-style-type: none;
+        }
+
+        .training-financing-text li {
+            margin-bottom: 15px;
+            padding-left: 35px;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .training-financing-text li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            opacity: 0.2;
+        }
+
+        .training-financing-text li::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 15px;
+            width: 10px;
+            height: 10px;
+            background-color: var(--accent);
+            border-radius: 50%;
+        }
+
+        .training-financing-image {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            position: relative;
+            height: 100%;
+        }
+
+        .training-financing-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Trainers Section */
+        .training-trainers {
+            text-align: center;
+        }
+
+        .training-trainers-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .training-trainers-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--gray);
+        }
+
+        /* Results Section */
+        .training-results {
+            background-color: var(--light);
+        }
+
+        .training-results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .training-result-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            border-bottom: 4px solid var(--accent);
+        }
+
+        .training-result-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .training-result-card i {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .training-result-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        /* Testimonials Section */
+        .training-testimonials {
+            background: linear-gradient(135deg, var(--primary) 0%, #2a5298 100%);
+            color: white;
+        }
+
+        .training-testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .training-testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 35px;
+            border-radius: var(--border-radius);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .training-testimonial-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .training-testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            color: rgba(255, 255, 255, 0.2);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .training-testimonial-card p {
+            font-style: italic;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+            font-size: 1.1rem;
+        }
+
+        .training-testimonial-author {
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .training-testimonial-author::before {
+            content: '';
+            width: 30px;
+            height: 2px;
+            background: var(--secondary);
+            margin-right: 15px;
+        }
+
+        /* FAQ Section */
+        .training-faq {
+            background-color: var(--light);
+        }
+
+        .training-faq-items {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .training-faq-item {
+            margin-bottom: 20px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .training-faq-item:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .training-faq-question {
+            background: white;
+            color: var(--dark);
+            padding: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.15rem;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .training-faq-question i {
+            transition: var(--transition);
+            color: var(--accent);
+        }
+
+        .training-faq-answer {
+            background: white;
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .training-faq-answer p {
+            padding: 25px 0;
+            color: var(--gray);
+        }
+
+        .training-faq-item.active .training-faq-answer {
+            max-height: 500px;
+        }
+
+        .training-faq-item.active .training-faq-question i {
+            transform: rotate(180deg);
+        }
+
+        /* Contact Section */
+        .training-contact {
+            padding: var(--section-padding);
+            background-color: white;
+        }
+
+        .training-contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 50px;
+        }
+
+        .training-contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .training-contact-item {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .training-contact-item i {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin-right: 20px;
+            min-width: 40px;
+        }
+
+        .training-contact-details h3 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .training-contact-details p {
+            font-size: 1.15rem;
+            color: var(--gray);
+        }
+
+        .training-contact-form {
+            background: var(--light);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .training-contact-form h3 {
+            color: var(--primary);
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .training-form-group {
+            margin-bottom: 25px;
+        }
+
+        .training-form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .training-form-group input,
+        .training-form-group textarea,
+        .training-form-group select {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid var(--light-gray);
+            border-radius: var(--border-radius);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .training-form-group input:focus,
+        .training-form-group textarea:focus,
+        .training-form-group select:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(77, 138, 240, 0.2);
+            outline: none;
+        }
+
+        .training-form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .training-form-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .training-btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            font-size: 1.05rem;
+            text-align: center;
+        }
+
+        .training-btn:hover {
+            background-color: #ff5252;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        .training-btn-secondary {
+            background-color: var(--primary);
+        }
+
+        .training-btn-secondary:hover {
+            background-color: #0d2a5e;
+        }
+
+
+        .contact-img {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+
+        .contact-img img {
+            border-radius: 15px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            :root {
+                --section-padding: 80px 0;
+            }
+
+            .training-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+
+
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            :root {
+                --section-padding: 80px 0;
+            }
+
+            .training-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+
+            .training-section-title h2 {
+                font-size: 2rem;
+            }
+
+            .training-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .training-hero p {
+                font-size: 1.15rem;
+            }
+
+            .training-objectives,
+            .training-pricing-cards,
+            .training-why-content,
+            .training-financing-content,
+            .training-testimonials-grid,
+            .training-contact-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .training-financing-text {
+                padding-right: 0;
+            }
+
+
+            .contact-img img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .training-hero h1 {
+                font-size: 1.9rem;
+            }
+
+            .training-section-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .training-pricing-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .training-results-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .training-contact-form {
+                padding: 30px;
+            }
+        }
+    </style>
+
+<body>
+
+    <header id="header"></header>
+
+
+
+
+
+    <!-- Hero Section -->
+    <section class="training-hero">
+        <div class="container training-hero-content">
+            <h1>Formation Moniteur Auto-École (TP ECSR - RNCP 35329)</h1>
+            <p>Devenez enseignant de la conduite avec notre formation diplômante, reconnue par l'État</p>
+        </div>
+    </section>
+
+    <!-- Objectives Section -->
+    <section class="training-section">
+        <div class="container">
+            <div class="training-section-title">
+                <h2>Objectif de la formation</h2>
+                <p>La formation "Enseignant de la Conduite et de la Sécurité Routière" (TP ECSR) a pour vocation de
+                    former des professionnels pédagogues, capables de transmettre efficacement les règles de conduite et
+                    de sécurité routière. Il s'agit d'un métier d'avenir, accessible partout en France, en forte tension
+                    sur le marché de l'emploi.</p>
+            </div>
+
+            <div class="training-objectives">
+                <div class="training-objectives-content">
+                    <h3><i class="fas fa-bullseye"></i> Activités visées</h3>
+                    <ul>
+                        <li>Former des candidats au permis de conduire</li>
+                        <li>Animer des actions de sensibilisation à la sécurité routière</li>
+                        <li>Gérer une séance de formation, en théorie et pratique</li>
+                        <li>Adapter sa pédagogie à différents publics</li>
+                        <li>Accompagner le parcours d'apprentissage des élèves</li>
+                    </ul>
+                </div>
+
+                <div class="training-objectives-content">
+                    <h3><i class="fas fa-tasks"></i> Compétences développées</h3>
+                    <ul>
+                        <li>Maîtrise des règles de conduite et de sécurité routière</li>
+                        <li>Conception et animation de modules de formation</li>
+                        <li>Suivi administratif et évaluations</li>
+                        <li>Utilisation des outils numériques pédagogiques</li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pedagogical Objectives Section -->
+    <section class="training-section" style="background-color: var(--light);">
+        <div class="container">
+            <div class="training-section-title">
+                <h2>Objectifs pédagogiques</h2>
+
+            </div>
+
+            <div class="training-objectives">
+                <div class="training-objectives-content">
+                    <h3><i class="fas fa-user-graduate"></i> Bloc 1 : Former des apprenants conducteurs</h3>
+                    <ul>
+                        <li>Création et animation de séquences pédagogiques adaptées</li>
+                        <li>Transmission des connaissances et compétences en conduite automobile</li>
+                        <li>Suivi de l'apprentissage, évaluation et progression</li>
+
+                    </ul>
+                </div>
+
+                <div class="training-objectives-content">
+                    <h3><i class="fas fa-shield-alt"></i> Bloc 2 : Sensibiliser aux comportements responsables</h3>
+                    <ul>
+                        <li>Animation de séances collectives autour de la sécurité routière</li>
+                        <li>Adaptation du discours selon le public (jeunes, seniors, entreprises)</li>
+                        <li>Création d'outils et de supports de sensibilisation</li>
+
+                    </ul>
+                </div>
+
+                <div class="training-objectives-content">
+                    <h3><i class="fas fa-cogs"></i> Modules transverses</h3>
+                    <ul>
+                        <li>Posture professionnelle et communication</li>
+                        <li>Cadre réglementaire (code de la route, sécurité)</li>
+                        <li>Outils numériques pédagogiques</li>
+                        <li>Techniques d'insertion professionnelle (CV, lettre de motivation)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="training-pricing">
+        <div class="container">
+            <div class="training-section-title">
+                <h2>Tarifs et modalités</h2>
+                <p>Une formation accessible grâce à de multiples financements</p>
+            </div>
+
+            <div class="training-pricing-cards">
+                <div class="training-pricing-card">
+                    <div class="training-pricing-header">
+                        <h3>Financement</h3>
+                    </div>
+                    <div class="training-pricing-content">
+                        <p>Formation 100 % prise en charge grâce à différentes solutions :</p>
+                        <ul class="training-pricing-features">
+                            <li>Compte Personnel de Formation (CPF)</li>
+                            <li>OPCO (Opérateurs de Compétences)</li>
+                            <li>France Travail (Pôle Emploi)</li>
+
+                        </ul>
+                        <div class="training-cta">
+                            <a href="#" class="training-btn">Évaluer votre éligibilité</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="training-pricing-card">
+                    <div class="training-pricing-header">
+                        <h3>Modalités</h3>
+                    </div>
+                    <div class="training-pricing-content">
+                        <p>Sessions disponibles dans nos centres :</p>
+                        <ul class="training-pricing-features">
+                            <li>Palaiseau (91)</li>
+                            <li>Noisy-le-Sec (93)</li>
+                            <li>Meaux (77)</li>
+
+                        </ul>
+                        <div class="training-cta">
+                            <a href="#" class="training-btn training-btn-secondary">Voir les prochaines dates</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="training-why">
+        <div class="container">
+            <div class="training-section-title">
+                <h2 style="color: #fff;">Pourquoi choisir EDUCÀSER ?</h2>
+                <p style="color: antiquewhite;">Les avantages de notre formation</p>
+            </div>
+
+            <div class="training-why-content">
+                <div class="training-why-point">
+                    <i class="fas fa-certificate"></i>
+                    <h3>Certification officielle</h3>
+                    <p>RNCP 35329, niveau 5 (Bac +2) reconnu par l'État</p>
+                </div>
+
+                <div class="training-why-point">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>Formateurs experts</h3>
+                    <p>Professionnels en activité du secteur auto-école</p>
+                </div>
+
+                <div class="training-why-point">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Flexibilité</h3>
+                    <p>Formation disponible toute l'année à votre rythme</p>
+                </div>
+
+                <div class="training-why-point">
+                    <i class="fas fa-euro-sign"></i>
+                    <h3>Financement</h3>
+                    <p>100 % prise en charge possible</p>
+                </div>
+
+                <div class="training-why-point">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Accompagnement emploi</h3>
+                    <p>Vers l'emploi dès la fin de la formation</p>
+                </div>
+
+                <div class="training-why-point">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Débouchés immédiats</h3>
+                    <p>Métier en forte tension dans toute la France</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financing Section -->
+    <section class="training-financing">
+        <div class="container">
+            <div class="training-section-title">
+                <h2>Financement & accompagnement</h2>
+                <p>Nous vous aidons à financer votre formation</p>
+            </div>
+
+            <div class="training-financing-content">
+                <div class="training-financing-text">
+                    <p>Notre formation est éligible à plusieurs dispositifs de financement :</p>
+                    <ul>
+                        <li><strong>CPF</strong> (Compte Personnel de Formation)</li>
+                        <li><strong>OPCO</strong> pour les salariés en reconversion</li>
+                        <li><strong>France Travail</strong> (Pôle Emploi)</li>
+
+                    </ul>
+                    <p>Notre équipe vous accompagne dans la constitution de votre dossier de financement pour maximiser
+                        vos chances d'obtenir une prise en charge à 100 %.</p>
+                    <div class="training-form-buttons" style="margin-top: 30px;">
+                        <a href="contact.html" class="training-btn">Débuter mon dossier</a>
+                        <a href="#train-contact" class="training-btn training-btn-secondary">Contactez-nous</a>
+                    </div>
+                </div>
+
+                <div class="training-financing-image">
+                    <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Accompagnement financement">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trainers Section -->
+    <section class="training-section training-trainers">
+        <div class="container">
+            <div class="training-section-title">
+                <h2>Formateurs & formatrices</h2>
+                <p>Une équipe de professionnels passionnés</p>
+            </div>
+
+            <div class="training-trainers-content">
+                <p>Nos formateurs sont des professionnels en activité, spécialistes de la conduite et de la sécurité
+                    routière. Ils apportent une vision concrète et opérationnelle du métier, basée sur leur expérience
+                    quotidienne dans les auto-écoles. Leur expertise pédagogique et leur connaissance des réalités du
+                    terrain vous assurent une formation de qualité, tournée vers la pratique professionnelle.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Access Section -->
+    <section class="training-section" style="background-color: var(--light);">
+        <div class="container">
+            <div class="training-section-title">
+                <h2>Modalités d'accès et d'évaluation</h2>
+                <p>Un parcours clair et structuré</p>
+            </div>
+
+            <div class="training-results-grid">
+                <div class="training-result-card">
+                    <i class="fas fa-door-open"></i>
+                    <h3>Accès à la formation</h3>
+                    <p>Entretien de positionnement - Validation de la candidature - Délais d'accès : 15 à 21 jours selon
+                        financement</p>
+                </div>
+
+                <div class="training-result-card">
+                    <i class="fas fa-clipboard-check"></i>
+                    <h3>Évaluation</h3>
+                    <p>Mises en situation pédagogiques et techniques - Entretien avec jury professionnel - Obtention du
+                        TP ECSR délivré par le Ministère du Travail</p>
+                </div>
+
+                <div class="training-result-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Résultats attendus</h3>
+                    <p>Obtention du TP ECSR - Insertion rapide dans un secteur en tension - Maîtrise de l'animation
+                        pédagogique et de la réglementation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers Section -->
+    <section class="training-section">
+        <div class="container">
+            <div class="training-section-title">
+                <h2>Débouchés & secteurs d'activité</h2>
+                <p>Un métier d'avenir avec de réelles perspectives</p>
+            </div>
+
+            <div class="training-objectives">
+                <div class="training-objectives-content">
+                    <h3><i class="fas fa-building"></i> Structures d'emploi</h3>
+                    <ul>
+                        <li>Auto-écoles traditionnelles ou associatives</li>
+                        <li>Centres de formation professionnelle</li>
+                        <li>Structures d'insertion ou de sensibilisation routière</li>
+
+                    </ul>
+                </div>
+
+                <div class="training-objectives-content">
+                    <h3><i class="fas fa-briefcase"></i> Postes accessibles</h3>
+                    <ul>
+                        <li>Moniteur auto-école</li>
+                        <li>Formateur en sécurité routière</li>
+                        <li>Enseignant de la conduite en entreprise</li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="training-result-card" style="max-width: 800px; margin: 50px auto 0;">
+                <i class="fas fa-chart-line"></i>
+                <h3>Rémunération</h3>
+                <p><strong>Salaire débutant :</strong> Entre 1 800 et 2 300 € brut par mois, selon la région et la
+                    structure</p>
+                <p><strong>Évolution :</strong> Possibilité d'évoluer vers des postes d'encadrement ou de créer sa
+                    propre auto-école</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Points Section -->
+    <section class="training-section" style="background-color: var(--primary); color: white;">
+        <div class="container">
+            <div class="training-section-title">
+                <h2 style="color: white;">Points forts de la formation</h2>
+                <p style="color: antiquewhite;">Ce qui fait la différence EDUCÀSER</p>
+            </div>
+
+            <div class="training-results-grid">
+                <div class="training-result-card"
+                    style="background: rgba(255, 255, 255, 0.1); color: white; border-bottom-color: var(--secondary);">
+                    <i class="fas fa-percentage"></i>
+                    <h3 style="color: antiquewhite;">100% pris en charge</h3>
+                    <p>Financement intégral possible grâce à nos accompagnements personnalisés</p>
+                </div>
+
+                <div class="training-result-card"
+                    style="background: rgba(255, 255, 255, 0.1); color: white; border-bottom-color: var(--secondary);">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <h3 style="color: antiquewhite;">Diplôme reconnu Bac+2</h3>
+                    <p>Titre Professionnel RNCP niveau 5 reconnu par l'État</p>
+                </div>
+
+                <div class="training-result-card"
+                    style="background: rgba(255, 255, 255, 0.1); color: white; border-bottom-color: var(--secondary);">
+                    <i class="fas fa-bolt"></i>
+                    <h3 style="color: antiquewhite;">Insertion rapide</h3>
+                    <p>Secteur en forte tension avec des besoins importants partout en France</p>
+                </div>
+
+                <div class="training-result-card"
+                    style="background: rgba(255, 255, 255, 0.1); color: white; border-bottom-color: var(--secondary);">
+                    <i class="fas fa-users"></i>
+                    <h3 style="color: antiquewhite;">Formateurs expérimentés</h3>
+                    <p>Équipe pédagogique composée de professionnels en activité</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documents Section -->
+    <section class="training-section">
+        <div class="container">
+            <div class="training-section-title">
+                <h2>Agenda & Brochure</h2>
+                <p>Téléchargez nos documents d'information</p>
+            </div>
+
+            <div class="training-form-buttons" style="justify-content: center; margin-top: 40px;">
+                <a href="#" class="training-btn" style="display: inline-flex; align-items: center; gap: 10px;">
+                    <i class="fas fa-calendar-alt"></i> Télécharger l'agenda de la formation
+                </a>
+                <a href="#" class="training-btn training-btn-secondary"
+                    style="display: inline-flex; align-items: center; gap: 10px;">
+                    <i class="fas fa-file-pdf"></i> Recevoir la brochure gratuitement
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="training-testimonials">
+        <div class="container">
+            <div class="training-section-title">
+                <h2 style="color: #fff;">Témoignages</h2>
+                <p style="color: antiquewhite;">Ce que disent nos anciens élèves</p>
+            </div>
+
+            <div class="training-testimonials-grid">
+                <div class="training-testimonial-card">
+                    <p>“Changer de métier à 40 ans n'était pas simple. Mais cette formation m'a redonné confiance.
+                        Aujourd'hui, je suis moniteur dans une auto-école de quartier, et je vis enfin d'un métier qui
+                        me passionne.”</p>
+                    <div class="training-testimonial-author">Laurent (41 ans)</div>
+                </div>
+
+                <div class="training-testimonial-card">
+                    <p>“J'ai choisi EDUCÀSER pour sa réputation et son accompagnement. Tout s'est passé à merveille.
+                        J'ai été embauchée deux semaines après la fin de la formation.”</p>
+                    <div class="training-testimonial-author">Fatou (28 ans)</div>
+                </div>
+
+                <div class="training-testimonial-card">
+                    <p>“Une formation très humaine, très réaliste. Les mises en situation m'ont préparé à toutes les
+                        situations avec mes futurs élèves.”</p>
+                    <div class="training-testimonial-author">Amine (33 ans)</div>
+                </div>
+
+                <div class="training-testimonial-card">
+                    <p>“Merci aux formateurs ! Leur expérience sur le terrain fait vraiment la différence. Ils nous
+                        préparent à la réalité du métier.”</p>
+                    <div class="training-testimonial-author">Julie (25 ans)</div>
+                </div>
+
+                <div class="training-testimonial-card">
+                    <p>“Je voulais me reconvertir rapidement. La formation chez EDUCÀSER a été intense mais efficace.
+                        J'ai trouvé un emploi dans la semaine suivant l'examen.”</p>
+                    <div class="training-testimonial-author">Mohamed (35 ans)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="training-faq">
+        <div class="container">
+            <div class="training-section-title">
+                <h2>Foire aux questions</h2>
+                <p>Les réponses à vos interrogations</p>
+            </div>
+
+            <div class="training-faq-items">
+                <div class="training-faq-item">
+                    <div class="training-faq-question">
+                        Quelle est la durée de la formation TP ECSR ?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="training-faq-answer">
+                        <p>La formation dure environ 910 heures, réparties sur 7 à 8 mois. Elle peut être suivie en
+                            continu ou selon un rythme adapté (en alternance ou à temps partiel), selon votre profil et
+                            vos besoins.</p>
+                    </div>
+                </div>
+
+                <div class="training-faq-item">
+                    <div class="training-faq-question">
+                        Est-ce compatible avec une reconversion professionnelle ?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="training-faq-answer">
+                        <p>Absolument. Le TP ECSR est conçu pour les personnes en reconversion. Vous bénéficiez d'un
+                            accompagnement individualisé, de supports modernes et d'une pédagogie active. Plus de 80 %
+                            de nos apprenants sont en reconversion.</p>
+                    </div>
+                </div>
+
+                <div class="training-faq-item">
+                    <div class="training-faq-question">
+                        Puis-je exercer partout en France après la formation ?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="training-faq-answer">
+                        <p>Oui. Le diplôme TP ECSR est reconnu par l'État et valable sur tout le territoire français.
+                            Vous pouvez postuler dans toutes les auto-écoles, organismes de formation ou structures
+                            d'insertion spécialisées.</p>
+                    </div>
+                </div>
+
+                <div class="training-faq-item">
+                    <div class="training-faq-question">
+                        Quelles sont les conditions d'accès à la formation ?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="training-faq-answer">
+                        <p>Les conditions principales sont : être titulaire du permis B depuis au moins 2 ans, avoir un
+                            casier judiciaire vierge, et réussir les tests de positionnement. Aucun diplôme préalable
+                            n'est exigé.</p>
+                    </div>
+                </div>
+
+                <div class="training-faq-item">
+                    <div class="training-faq-question">
+                        Comment se déroulent les évaluations ?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="training-faq-answer">
+                        <p>L'évaluation se fait en continu tout au long de la formation et se termine par un examen
+                            final devant un jury professionnel. L'examen comprend des mises en situation pédagogiques et
+                            un entretien technique.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="training-contact">
+        <div class="container">
+            <div class="training-section-title">
+                <h2>Contactez-nous</h2>
+                <p>Préinscription et informations</p>
+            </div>
+
+            <div class="training-contact-content">
+                <div class="training-contact-info">
+                    <div class="training-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="training-contact-details">
+                            <h3>Email</h3>
+                            <p>contact@educaser.fr</p>
+                        </div>
+                    </div>
+
+                    <div class="training-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="training-contact-details">
+                            <h3>Téléphone</h3>
+                            <p>01 69 09 27 27</p>
+                        </div>
+                    </div>
+
+                    <div class="training-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="training-contact-details">
+                            <h3>Centres</h3>
+                            <p>Palaiseau (91) – Noisy-le-Sec (93) – Meaux (77)</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-img"> <img src="media/contact-autoecole.jpg" alt=""></div>
+
+                </div>
+
+                <div class="training-contact-form">
+                    <h3>Demande d'information</h3>
+                    <form  id="train-contact" action="https://formsubmit.co/ahmed.trad15@gmail.com"  method="POST">
+                        <div class="training-form-group">
+                            <label>Nom complet</label>
+                            <input type="text" name="Nom complet" required>
+                        </div>
+
+                        <div class="training-form-group">
+                            <label>Email</label>
+                            <input type="email" name="Email" required>
+                        </div>
+
+                        <div class="training-form-group">
+                            <label>Téléphone</label>
+                            <input type="tel" name="Téléphone">
+                        </div>
+
+                        <div class="training-form-group">
+                            <label>Message</label>
+                            <textarea name="message" required></textarea>
+                        </div>
+
+                        <button type="submit" class="training-btn" style="width: 100%;">Envoyer ma demande</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <footer id="footer"></footer>
+
+
+    <script>
+
+        // FAQ accordion
+        document.querySelectorAll('.training-faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+
+
+
+
+    </script>
+
+
+
+
+    <script src="educaser.js"></script>
+
+</body>
+
+
+</head>
+
+</html>

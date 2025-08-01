@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDUCÀSER - FAQ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+  /* Hero Section */
+        .faq-hero {
+            background: linear-gradient(120deg, rgba(26, 58, 108, 0.9) 0%, rgba(77, 138, 240, 0.85) 100%);
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 140px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+    
+        .faq-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 25px;
+            line-height: 1.3;
+        }
+
+        .faq-hero p {
+            font-size: 1.3rem;
+            margin: 0 auto 30px;
+            max-width: 700px;
+            opacity: 0.95;
+        }
+
+        /* Section Styles */
+        .faq-section {
+            padding: var(--section-padding);
+        }
+
+        .faq-section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .faq-section-title h2 {
+            font-size: 2.4rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .faq-section-title p {
+            color: var(--gray);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq-section-title::after {
+            content: '';
+            width: 80px;
+            height: 5px;
+            background: var(--secondary);
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 3px;
+        }
+
+        /* FAQ Container */
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 25px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .faq-question {
+            display: flex;
+            align-items: center;
+            padding: 25px 30px;
+            background: rgba(77, 138, 240, 0.05);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .faq-question::after {
+            content: '\f107';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: var(--transition);
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .faq-question.active::after {
+            transform: translateY(-50%) rotate(180deg);
+        }
+
+        .faq-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .faq-question h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+        }
+
+        .faq-answer {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 30px;
+            max-height: 1000px;
+        }
+
+        .faq-answer p {
+            margin-bottom: 15px;
+        }
+
+        .faq-answer ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .faq-answer li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .faq-answer li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--accent);
+        }
+
+        /* Contact Section */
+        .faq-contact {
+            background: linear-gradient(135deg, var(--primary) 0%, #2a5298 100%);
+            color: white;
+            padding: var(--section-padding);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .faq-contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80') center/cover;
+            opacity: 0.1;
+        }
+
+        .faq-contact-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .faq-contact h2 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+        }
+
+        .faq-contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.2rem;
+        }
+
+        .contact-method i {
+            font-size: 1.8rem;
+            color: var(--secondary);
+        }
+
+        .faq-cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .faq-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background: var(--secondary);
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .faq-cta-btn:hover {
+            background: #ff5252;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        .faq-cta-btn.secondary {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .faq-cta-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            :root {
+                --section-padding: 80px 0;
+            }
+            
+            .faq-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --section-padding: 70px 0;
+            }
+            
+            .faq-section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .faq-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .faq-hero p {
+                font-size: 1.15rem;
+            }
+            
+            .faq-question {
+                padding: 20px;
+            }
+            
+            .faq-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            .faq-question h3 {
+                font-size: 1.15rem;
+            }
+            
+            .faq-cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .faq-hero h1 {
+                font-size: 1.9rem;
+            }
+            
+            .faq-section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .faq-question::after {
+                right: 20px;
+            }
+        }
+   
+</style>
+<body>
+    
+<header id="header"></header>
+
+
+
+
+  
+    <!-- Hero Section -->
+    <section class="faq-hero">
+        <div class="container faq-hero-content">
+            <h1>❓ Foire aux questions (FAQ) – EDUCÀSER</h1>
+            <p>Retrouvez ici les réponses aux questions les plus fréquentes concernant nos formations Moniteur Auto-École (TP ECSR) et Secrétaire Auto-École.</p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-section-title">
+                <h2>Questions fréquentes</h2>
+                <p>Trouvez rapidement les réponses à vos interrogations</p>
+            </div>
+            
+            <div class="faq-container">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item active">
+                    <div class="faq-question active">
+                        <div class="faq-icon">1</div>
+                        <h3>Quelle est la durée de la formation Moniteur Auto-École (TP ECSR) ?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>La formation dure environ 910 heures, réparties sur 7 à 8 mois. Elle comprend des cours théoriques, des mises en situation pédagogique, et un stage pratique. Elle peut être suivie en continu, en temps partiel ou en alternance selon votre profil et vos disponibilités. EDUCÀSER s’adapte à votre rythme pour garantir une montée en compétences efficace.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <div class="faq-icon">2</div>
+                        <h3>Cette formation est-elle reconnue par l'État ?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Oui. Le TP ECSR (Titre Professionnel Enseignant de la Conduite et de la Sécurité Routière) est inscrit au RNCP (code 35329) et délivré par le Ministère du Travail. Il confère un niveau Bac +2 (niveau 5). Il est reconnu partout en France et permet d'exercer dans toutes les auto-écoles ou structures de formation routière.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <div class="faq-icon">3</div>
+                        <h3>Est-ce que la formation Secrétaire Auto-École donne un diplôme ?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>La formation Secrétaire Auto-École proposée par EDUCÀSER est certifiée par une attestation de compétences professionnelles. Elle permet d’intégrer rapidement une auto-école en maîtrisant les bases de la gestion administrative, de l’accueil, du suivi des élèves et des formalités liées aux examens. C’est une formation courte, professionnalisante et immédiatement valorisable sur le marché de l’emploi.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <div class="faq-icon">4</div>
+                        <h3>Puis-je financer ma formation avec le CPF ?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Oui. Nos deux formations sont éligibles au CPF (Compte Personnel de Formation). Si vous avez un solde suffisant, vous n’avez rien à payer. Dans le cas contraire, nous vous accompagnons pour compléter avec une aide OPCO, régionale ou France Travail (ex Pôle emploi).</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <div class="faq-icon">5</div>
+                        <h3>Je suis en reconversion, est-ce adapté à mon profil ?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Parfaitement. Plus de 70 % de nos apprenants sont en reconversion professionnelle. Nos formations sont conçues pour des adultes en reprise d'études, avec un accompagnement individualisé, des outils accessibles et des modalités flexibles (présentiel, distanciel, alternance). Notre objectif : vous aider à changer de vie durablement.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 6 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <div class="faq-icon">6</div>
+                        <h3>Où ont lieu les formations ?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nos formations sont disponibles dans nos centres de formation à Palaiseau, Noisy-le-Sec et Meaux. Pour certaines sessions de la formation Secrétaire Auto-École, un format à distance est aussi proposé, idéal pour les apprenants situés en dehors d'Île-de-France.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 7 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <div class="faq-icon">7</div>
+                        <h3>Quels sont les prérequis pour s’inscrire ?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p><strong>Pour la formation Moniteur Auto-École, il faut :</strong></p>
+                        <ul>
+                            <li>Avoir au minimum 21 ans</li>
+                            <li>Être titulaire du permis B depuis au moins 3 ans</li>
+                            <li>Avoir un niveau Bac minimum ou équivalent</li>
+                        </ul>
+                        <p><strong>Pour la formation Secrétaire Auto-École :</strong></p>
+                        <ul>
+                            <li>Être à l’aise avec les outils bureautiques</li>
+                            <li>Être organisé(e) et rigoureux(se)</li>
+                            <li>Avoir un bon sens du relationnel</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 8 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <div class="faq-icon">8</div>
+                        <h3>Quand et comment m’inscrire ?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Les rentrées ont lieu tout au long de l’année. Il suffit de :</p>
+                        <ul>
+                            <li>Remplir le formulaire de pré-inscription</li>
+                            <li>Participer à un entretien de positionnement</li>
+                            <li>Monter le dossier de financement avec notre équipe</li>
+                        </ul>
+                        <p><strong>⏱️ Délais d’accès moyens :</strong></p>
+                        <ul>
+                            <li>CPF : 10 à 15 jours</li>
+                            <li>OPCO : 2 à 3 semaines</li>
+                            <li>France Travail : 3 à 4 semaines</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="faq-contact">
+        <div class="container faq-contact-content">
+            <h2>📞 Vous avez encore une question ?</h2>
+            <p>Notre équipe est à votre disposition pour répondre à toutes vos interrogations</p>
+            
+            <div class="faq-contact-info">
+                <div class="contact-method">
+                    <i class="fas fa-envelope"></i>
+                    <span>contact@educaser.fr</span>
+                </div>
+                <div class="contact-method">
+                    <i class="fas fa-phone"></i>
+                    <span>01 69 09 27 27</span>
+                </div>
+            </div>
+            
+            <div class="faq-cta-buttons">
+                <a href="contact.html#devis-form" class="faq-cta-btn">
+                    <i class="fas fa-file-invoice"></i> Demander un devis personnalisé
+                </a>
+                <a href="contact.html#registration-form" class="faq-cta-btn secondary">
+                    <i class="fas fa-file-signature"></i> Je m’inscris maintenant
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+<footer id="footer"></footer>
+
+   
+
+<script>
+     // FAQ Accordion Functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                
+                // Close all other FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        item.classList.remove('active');
+                        item.querySelector('.faq-question').classList.remove('active');
+                    }
+                });
+                
+                // Toggle current FAQ item
+                faqItem.classList.toggle('active');
+                question.classList.toggle('active');
+            });
+        });
+        
+        // Animation for FAQ items
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach((item, index) => {
+            item.style.opacity = "0";
+            item.style.transform = "translateY(20px)";
+            item.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+            
+            setTimeout(() => {
+                item.style.opacity = "1";
+                item.style.transform = "translateY(0)";
+            }, 100 + (index * 100));
+        });
+</script>
+
+
+
+
+
+
+<script src="educaser.js"></script>
+
+</body>
+
+
+</head>
+</html>
+
